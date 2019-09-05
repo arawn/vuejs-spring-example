@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'io.github.arawn'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+    runtimeOnly "org.springframework.boot:spring-boot-starter-actuator"
+    runtimeOnly "org.webjars.npm:babel-standalone:6.21.1"
+    runtimeOnly "org.webjars.npm:vue:2.6.10"
+    runtimeOnly "org.webjars.npm:vue-router:3.1.1"
+    runtimeOnly "org.webjars.npm:vuetify:2.0.11"
+    runtimeOnly "org.webjars.npm:mdi__font:4.0.96"
+    runtimeOnly "org.webjars.npm:axios:0.19.0"
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
